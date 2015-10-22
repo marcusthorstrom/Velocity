@@ -7,12 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		334D574D1B05F7270077DD0D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 334D574C1B05F7270077DD0D /* CoreLocation.framework */; };
 		33DE6A921B05E7A000D3EE47 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DE6A911B05E7A000D3EE47 /* AppDelegate.swift */; };
 		33DE6A941B05E7A000D3EE47 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DE6A931B05E7A000D3EE47 /* ViewController.swift */; };
 		33DE6A971B05E7A000D3EE47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33DE6A951B05E7A000D3EE47 /* Main.storyboard */; };
 		33DE6A991B05E7A000D3EE47 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33DE6A981B05E7A000D3EE47 /* Images.xcassets */; };
 		33DE6A9C1B05E7A000D3EE47 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 33DE6A9A1B05E7A000D3EE47 /* LaunchScreen.xib */; };
 		33DE6AA81B05E7A000D3EE47 /* VelocityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33DE6AA71B05E7A000D3EE47 /* VelocityTests.swift */; };
+		33FC0BD61B1510C300E193CA /* gps.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 33FC0BD51B1510C300E193CA /* gps.gpx */; };
+		33FC0BD81B1513E000E193CA /* 20150526T204919Z.gpx in Resources */ = {isa = PBXBuildFile; fileRef = 33FC0BD71B1513E000E193CA /* 20150526T204919Z.gpx */; };
+		33FC0BE41B151E9600E193CA /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 33FC0BE61B151E9600E193CA /* Localizable.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +30,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		334A026A1B15267F0032A222 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Main.strings; sourceTree = "<group>"; };
+		334A026B1B15267F0032A222 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		334A026C1B15267F0032A222 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = sv; path = sv.lproj/Info.plist; sourceTree = "<group>"; };
+		334A026D1B15267F0032A222 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
+		334D574C1B05F7270077DD0D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		33DE6A8C1B05E7A000D3EE47 /* Velocity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Velocity.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		33DE6A901B05E7A000D3EE47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33DE6A911B05E7A000D3EE47 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		33DE6A931B05E7A000D3EE47 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		33DE6A931B05E7A000D3EE47 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; usesTabs = 1; };
 		33DE6A961B05E7A000D3EE47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		33DE6A981B05E7A000D3EE47 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		33DE6A9B1B05E7A000D3EE47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		33DE6AA11B05E7A000D3EE47 /* VelocityTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VelocityTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		33DE6AA61B05E7A000D3EE47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		33DE6AA71B05E7A000D3EE47 /* VelocityTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VelocityTests.swift; sourceTree = "<group>"; };
+		33FC0BD51B1510C300E193CA /* gps.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = gps.gpx; sourceTree = "<group>"; };
+		33FC0BD71B1513E000E193CA /* 20150526T204919Z.gpx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = 20150526T204919Z.gpx; sourceTree = "<group>"; };
+		33FC0BD91B151BA800E193CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Base; path = Base.lproj/Info.plist; sourceTree = "<group>"; };
+		33FC0BDB1B151BB100E193CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = en; path = en.lproj/Info.plist; sourceTree = "<group>"; };
+		33FC0BE51B151E9600E193CA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		33FC0BE71B151E9800E193CA /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				334D574D1B05F7270077DD0D /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +74,9 @@
 		33DE6A831B05E79F00D3EE47 = {
 			isa = PBXGroup;
 			children = (
+				33FC0BD71B1513E000E193CA /* 20150526T204919Z.gpx */,
+				33FC0BD51B1510C300E193CA /* gps.gpx */,
+				334D574C1B05F7270077DD0D /* CoreLocation.framework */,
 				33DE6A8E1B05E7A000D3EE47 /* Velocity */,
 				33DE6AA41B05E7A000D3EE47 /* VelocityTests */,
 				33DE6A8D1B05E7A000D3EE47 /* Products */,
@@ -90,7 +108,8 @@
 		33DE6A8F1B05E7A000D3EE47 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				33DE6A901B05E7A000D3EE47 /* Info.plist */,
+				33FC0BDA1B151BA800E193CA /* Info.plist */,
+				33FC0BE61B151E9600E193CA /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -156,11 +175,13 @@
 		33DE6A841B05E79F00D3EE47 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "Marcus Thorstrom";
 				TargetAttributes = {
 					33DE6A8B1B05E7A000D3EE47 = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = 2MHR3H5ZHQ;
 					};
 					33DE6AA01B05E7A000D3EE47 = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -175,6 +196,7 @@
 			knownRegions = (
 				en,
 				Base,
+				sv,
 			);
 			mainGroup = 33DE6A831B05E79F00D3EE47;
 			productRefGroup = 33DE6A8D1B05E7A000D3EE47 /* Products */;
@@ -193,8 +215,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				33DE6A971B05E7A000D3EE47 /* Main.storyboard in Resources */,
+				33FC0BE41B151E9600E193CA /* Localizable.strings in Resources */,
 				33DE6A9C1B05E7A000D3EE47 /* LaunchScreen.xib in Resources */,
+				33FC0BD61B1510C300E193CA /* gps.gpx in Resources */,
 				33DE6A991B05E7A000D3EE47 /* Images.xcassets in Resources */,
+				33FC0BD81B1513E000E193CA /* 20150526T204919Z.gpx in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +265,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				33DE6A961B05E7A000D3EE47 /* Base */,
+				334A026A1B15267F0032A222 /* sv */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -248,8 +274,29 @@
 			isa = PBXVariantGroup;
 			children = (
 				33DE6A9B1B05E7A000D3EE47 /* Base */,
+				334A026B1B15267F0032A222 /* sv */,
 			);
 			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+		33FC0BDA1B151BA800E193CA /* Info.plist */ = {
+			isa = PBXVariantGroup;
+			children = (
+				33FC0BD91B151BA800E193CA /* Base */,
+				33FC0BDB1B151BB100E193CA /* en */,
+				334A026C1B15267F0032A222 /* sv */,
+			);
+			name = Info.plist;
+			sourceTree = "<group>";
+		};
+		33FC0BE61B151E9600E193CA /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				33FC0BE51B151E9600E193CA /* en */,
+				33FC0BE71B151E9800E193CA /* Base */,
+				334A026D1B15267F0032A222 /* sv */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -291,7 +338,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -330,7 +377,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -342,9 +389,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Velocity/Info.plist;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Marcus Thorstrom (A523LBN6DZ)";
+				INFOPLIST_FILE = Velocity/Base.lproj/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "38a1f7c7-48dd-448e-801e-63e77bb39f09";
 			};
 			name = Debug;
 		};
@@ -352,9 +404,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = Velocity/Info.plist;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Marcus Thorstrom (A523LBN6DZ)";
+				INFOPLIST_FILE = Velocity/Base.lproj/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "38a1f7c7-48dd-448e-801e-63e77bb39f09";
 			};
 			name = Release;
 		};
@@ -411,6 +468,7 @@
 				33DE6AAD1B05E7A000D3EE47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		33DE6AAE1B05E7A000D3EE47 /* Build configuration list for PBXNativeTarget "VelocityTests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +477,7 @@
 				33DE6AB01B05E7A000D3EE47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

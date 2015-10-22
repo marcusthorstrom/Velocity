@@ -1,0 +1,18 @@
+/* 
+  Localizable.strings
+  Velocity
+
+  Created by Marcus Thorstrom on 2015-05-26.
+  Copyright (c) 2015 Marcus Thorstrom. All rights reserved.
+*/
+RESET = "Återställ";
+
+MAX = "Max";
+
+KILOMETERS = "km/h";
+METERS = "m/s";
+MILES = "mph";
+KNOTS = "knop";
+badSignal = "GPS signalen är dålig, prova stäng av Wi-Fi";
+
+BGUPDATES = "Uppdatera i bakgrunden";
