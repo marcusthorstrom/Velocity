@@ -14,7 +14,6 @@ import CoreLocation
 
 class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureRecognizerDelegate{
 	
-	let userBGSwitch = "USERBGSWITCH";
 	
 	var locationManager = CLLocationManager();
 	var label = UILabel();
@@ -26,9 +25,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
 	var resetButton = UIButton();
 	var warning = UILabel();
 	var maxText = UILabel();
-	var bgUpdateSwitch = UISwitch();
-	var bgUpdateSwitchLabel = UILabel();
-	var bgUpdates = false;
+
 	
 	
 	//Strings
@@ -37,7 +34,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
 	var meters = NSLocalizedString("METERS", comment: "m/s");
 	var miles = NSLocalizedString("MILES", comment: "mph");
 	var knots = NSLocalizedString("KNOTS", comment: "knots");
-	var bgUpdatesString = NSLocalizedString("BGUPDATES", comment: "Stop background updates");
 	var max = NSLocalizedString("MAX", comment: "Max");
 	var reset = NSLocalizedString("RESET", comment: "Reset");
 	var badSignal = NSLocalizedString("badSignal", comment: "The gps signal is weak, try turning of wifi");
@@ -63,18 +59,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		let defaults = NSUserDefaults.standardUserDefaults();
-		bgUpdateSwitch.setOn(defaults.boolForKey(userBGSwitch), animated: true);
-		
-		
-		NSNotificationCenter.defaultCenter().addObserver(self, selector: "backgroundMode", name: UIApplicationDidEnterBackgroundNotification, object: nil);
-		
-		NSNotificationCenter.defaultCenter().addObserver(self,
-			selector: "activeMode",
-			name: UIApplicationDidBecomeActiveNotification,
-			object: nil)
-		
+
 		
 		//		//Add first-open-view
 		//var firstVeiw = UIView(frame: self.view.frame);
@@ -94,7 +79,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
 		
 		
 		
-		var gestures = UITapGestureRecognizer(target: self, action: "screenTapped");
+		let gestures = UITapGestureRecognizer(target: self, action: "screenTapped");
 		gestures.numberOfTapsRequired = 1;
 		self.view .addGestureRecognizer(gestures);
 		
@@ -107,8 +92,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
 		self.view.addSubview(maxLabel);
 		self.view.addSubview(resetButton);
 		self.view.addSubview(warning);
-		self.view.addSubview(bgUpdateSwitch);
-		self.view.addSubview(bgUpdateSwitchLabel);
 		
 		updateViews();
 		updateLabels();
@@ -119,13 +102,13 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
 	}
 	
 	
-	/*
+	
 	func locationManager(manager: CLLocationManager, didUpdateToLocation newLocation: CLLocation, fromLocation oldLocation: CLLocation) {
 		NSLog("Speed: %d", CGFloat(newLocation.speed))
 		updateSpeed( CGFloat(manager.location!.speed));
 		
 	}
-*/
+
 	
 	func updateSpeed(var newSpeed: CGFloat){
 		if(newSpeed < 0 ){
@@ -147,7 +130,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
 		}
 		updateLabels();
 	}
-	
+	/*
 	func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
 		
 		for location in locations{
@@ -159,6 +142,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
 		}
 		
 	}
+	*/
 	
 	
 	
@@ -174,23 +158,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
 		warning.sizeToFit();
 		warning.center.x = (self.view.frame.size.width / 2);
 		warning.center.y = (self.view.frame.size.height * 0.2);
-		
-		//Switch + label
-		bgUpdateSwitch.frame = CGRectZero;
-		bgUpdateSwitch.frame.origin.x = self.view.frame.origin.x + 20;
-		bgUpdateSwitch.frame.origin.y = self.view.frame.origin.y + 20;
-		
-		bgUpdateSwitch.addTarget(self, action: "bgSwitch", forControlEvents: UIControlEvents.TouchUpInside);
-		
-		bgUpdateSwitchLabel.frame = CGRectZero;
-		bgUpdateSwitchLabel.text = bgUpdatesString
-		bgUpdateSwitchLabel.numberOfLines = 0;
-		bgUpdateSwitchLabel.sizeToFit();
-		
-		bgUpdateSwitchLabel.center.y = bgUpdateSwitch.center.y
-		bgUpdateSwitchLabel.frame.origin.x = bgUpdateSwitch.frame.origin.x + bgUpdateSwitch.frame.size.width + 10;
-		
-		
+
 		//Current Speed
 		let labelWidth:CGFloat = self.view.frame.size.width*0.8;
 		let labelHeight:CGFloat = self.view.frame.size.height*0.11;
@@ -266,23 +234,7 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
 		resetButton.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal);
 	}
 	
-	func bgSwitch() {
-		let defaults = NSUserDefaults.standardUserDefaults();
-		defaults.setBool(bgUpdateSwitch.on, forKey: userBGSwitch);
-		//defaults.synchronize();
-		
-		//If set to true
-		if(bgUpdateSwitch.on){
-			if (self.locationManager.respondsToSelector("requestAlwaysAuthorization")){
-				self.locationManager.requestAlwaysAuthorization()
-			}
-			bgUpdates = true;
-		}
-		//If set to false
-		else {
-			bgUpdates = false;
-		}
-	}
+
 	
 	func updateLabels() {
 		
@@ -335,25 +287,6 @@ class ViewController: UIViewController, CLLocationManagerDelegate, UIGestureReco
 		
 		updateLabels();
 		
-	}
-	
-	func backgroundMode(){
-		//When the BGUpdates are switched of
-		if(!bgUpdates) {
-			//Then disable location tracking
-			locationManager.stopUpdatingLocation()
-			locationManager.stopUpdatingHeading();
-			NSLog("Locaton manager stopped");
-		}
-		
-		
-	}
-	func activeMode() {
-		if(!bgUpdates){
-			locationManager.startUpdatingLocation();
-			locationManager.startUpdatingHeading();
-			NSLog("Location Manager started");
-		}
 	}
 	
 }
